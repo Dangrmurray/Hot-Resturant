@@ -24,8 +24,6 @@ var reservations = [
 	}
 ];
 
-
-
 // ROUTES
 app.get("/", function(req, res){
 	res.sendFile(path.join(__dirname, "home.html"));
@@ -48,14 +46,15 @@ app.get("/api/tables", function(req, res){
 	return res.json(reservations);
 });
 
-// app.post("/api/reserve", function(req, res){
-// 	var newres = req.body;
+// Creates new reserverations
+app.post("/api/reserve", function(req, res){
+	var newres = req.body;
 
-// 	console.log(newres);	
-// 	reservations.push(newres);
+	console.log(newres);	
+	reservations.push(newres);
 
-// 	res.json(newres);
-// });
+	res.json(newres);
+});
 
 // Starts the server to begin listening
 app.listen(PORT, function() {
