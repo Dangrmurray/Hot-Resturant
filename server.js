@@ -14,13 +14,13 @@ var reservations = [
 		name: "Doge",
 		phone: 34234234234,
 		email: "doge@email.org",
-		unique_id: 123
+		res_id: 123
 	},
 	{
 		name: "Hello",
 		phone: 34234234,
 		email: "hello@hi.com",
-		unique_id: 321
+		res_id: 321
 	}
 ];
 
@@ -29,13 +29,13 @@ var waitList = [
 		name: "Cool Hip Person",
 		phone: "000-000-9999",
 		email: "cool@yes.com",
-		unique_id: 12345
+		res_id: 12345
 	},
 	{
 		name: "Finn",
 		phone: "000-000-0000",
 		email: "finn@cakes.org",
-		unique_id: 90901
+		res_id: 90901
 	}
 ];
 
