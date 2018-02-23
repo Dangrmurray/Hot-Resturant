@@ -24,8 +24,23 @@ var reservations = [
 	}
 ];
 
+var waitList = [
+	{
+		name: "Cool Hip Person",
+		phone: "000-000-9999",
+		email: "cool@yes.com",
+		unique_id: 12345
+	},
+	{
+		name: "Finn",
+		phone: "000-000-0000",
+		email: "finn@cakes.org",
+		unique_id: 90901
+	}
+];
+
 // ROUTES
-app.get("/", function(req, res){
+app.use(function(req, res){
 	res.sendFile(path.join(__dirname, "home.html"));
 });
 
@@ -37,13 +52,14 @@ app.get("/reserve", function(req, res){
 	res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Displays all current reservations & waitlist
+// Displays all current reservations
 app.get("/api/tables", function(req, res){
 	var chosen = req.params.reservations;
 
 	console.log(chosen);
 
-	return res.json(reservations);
+	res.json(reservations);
+	res.json(waitList);
 });
 
 // Creates new reserverations

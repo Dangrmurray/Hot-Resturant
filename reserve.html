@@ -74,13 +74,13 @@
   
         var newTable = {
           name: $("#name").val().trim(),
-          num: $("#num").val().trim(),
+          phone: $("#num").val().trim(),
           email: $("#email").val().trim(),
-          resID: $("#resID").val().trim()
+          res_id: $("#resID").val().trim()
         };
   
         // Question: What does this code do??
-        $.post("/api/new", newTable)
+        $.post("/api/tables", newTable)
         .done(function(data) {
           console.log(data);
           alert("Adding Reservation...");
