@@ -35,8 +35,9 @@
           </div>
        
           <div>
-            <a href="">API Table Link |</a> 
-            <a href="">API Wait List</a>
+            <a href="#" id="clear">Clear Table</a>
+            <a href="/api/tables">API Table Link |</a> 
+            <a href="/api/waitlist">API Wait List</a>
           </div>
 
         </div>
@@ -100,6 +101,22 @@
         }
       });
     }
+
+    clearTable function(){
+      var currentURL = window.location.origin;
+      $.ajax({url: currentURL + "/api/clear", method: "POST"})
+    }
+
+    $("#clear").on('click', function(){
+      alert("Clearing...");
+      clearTable();
+
+      location.reload();
+    })
+
+
+    runTableQuery();
+    runWaitListQuery();
 
 
       
